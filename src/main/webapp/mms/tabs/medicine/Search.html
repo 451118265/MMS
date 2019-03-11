@@ -68,25 +68,25 @@ style="width:1000px;height:600px;">
     });
 }
 // 多条件查询
-    // function SMMMulclick() {
+    function SMMMulclick() {
 
-    // $.post("../Medicine/QueryMultiMedicine", {
-    //     mname:$('#Mulmname').val(),
-    //     mmode:$('#Mulmmode').combobox("getValue"),
-    //     mefficacy:$('#Mulmefficacy').val()
-    // }, function(data) {
-    //     $('#MultiSMMdatagrid').datagrid({
-    //         url:'../Medicine/GetMultiMedicine'
-    //     });
-    //     // $('#MultiSMMdatagrid').datagrid('loadData',data);
-    //    $('#MultiSMMdialog').dialog('open');
+    $.post("../Medicine/QueryMultiMedicine", {
+        mname:$('#Mulmname').val(),
+        mmode:$('#Mulmmode').combobox("getValue"),
+        mefficacy:$('#Mulmefficacy').val()
+    }, function(data) {
+        $('#MultiSMMdatagrid').datagrid({
+            url:'../Medicine/GetMultiMedicine'
+        });
+        // $('#MultiSMMdatagrid').datagrid('loadData',data);
+       $('#MultiSMMdialog').dialog('open');
         
-    // });
+    });
 }
 </script>
 
 <!-- 多条件查询页面 -->
-<!-- <br>
+ <br>
 <div style="margin-left:15%">
     <div class="easyui-panel" title="药品多条件查询信息"
     data-options="iconCls:'icon-pill'"
@@ -94,16 +94,16 @@ style="width:1000px;height:600px;">
     <div style="margin:50px 0px 0px 100px;font-size: 40px">
         <div style="margin-bottom: 30px">
 
-           服用方法:<select  class="easyui-combobox"   id="Mulmmode" 
+           服用方法:<select  class="easyui-combobox"   id="Mulmmode"
            data-options="panelHeight:'auto'"
            style="width: 60px;height:40px">
            <option value="内服">内服</option>
            <option value="外用">外用</option>
-       </select>  
+       </select>
    </div>
    <div style="margin-bottom: 30px">
      名称:<input id="Mulmname" multiline="true"
-     class="easyui-textbox" 
+     class="easyui-textbox"
      style="width: 500px;height:100px"
      data-options="" ></input>
  </div>
@@ -114,7 +114,7 @@ style="width:1000px;height:600px;">
 </div>
 </div>
 <div>
-    <a href="javascript:SMMMulclick()" class="easyui-linkbutton" 
+    <a href="javascript:SMMMulclick()" class="easyui-linkbutton"
     iconCls="icon-ok" style="width:30%;margin-left: 30%"><h1>多条件查询</h1></a>
 </div>
 </div>
@@ -122,7 +122,7 @@ style="width:1000px;height:600px;">
 <!-- 多条件查询end -->
 
 <!-- 隐藏页面-多条件查询结果 -->
-<!-- <div  title="药品信息" closed="true" id="MultiSMMdialog" 
+ <div  title="药品信息" closed="true" id="MultiSMMdialog"
 data-options="iconCls:'icon-pill',modal:true,draggable:false"
 style="width:1500px;height:600px;">
      <table class="easyui-datagrid" id="MultiSMMdatagrid" 
@@ -148,4 +148,3 @@ style="width:1500px;height:600px;">
       </thead>
   </table>
 </div>
- -->

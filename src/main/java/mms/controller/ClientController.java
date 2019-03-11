@@ -13,6 +13,8 @@ import mms.pojo.Client;
 import mms.pojo.EasyUIResult;
 import mms.services.ClientService;
 
+import java.util.List;
+
 @RequestMapping("Client")
 @Controller
 public class ClientController {
@@ -29,7 +31,7 @@ public class ClientController {
 		return client;
 	}
 
-	// 按编号删除
+ 	// 按编号删除
 	@RequestMapping("DeleteClient")
 	@ResponseBody
 	public void deleteClientBycno(String cno) {
