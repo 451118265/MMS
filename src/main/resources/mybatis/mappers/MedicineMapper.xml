@@ -13,10 +13,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
           and mefficacy = #{mefficacy} 
         </if>
         <if test="mname!=''">
-          and mname  = #{mname} 
+          and mname  LIKE CONCAT('%',#{mname},'%')
 		</if>
 		<if test="mmode!=''">
-          and mmode = #{mmode} 
+          and mmode LIKE CONCAT('%',#{mmode},'%')
         </if>
         
 	</select>
