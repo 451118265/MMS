@@ -10,13 +10,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="queryMultiMedicine"  parameterType="Medicine" resultType="Medicine">
 		SELECT * FROM medicine WHERE 1=1
 		<if test="mefficacy!=''">
-          and mefficacy = #{mefficacy} 
+          and mefficacy LIKE CONCAT('%',#{mefficacy},'%')
         </if>
         <if test="mname!=''">
           and mname  LIKE CONCAT('%',#{mname},'%')
 		</if>
 		<if test="mmode!=''">
-          and mmode LIKE CONCAT('%',#{mmode},'%')
+          and mmode = #{mmode}
         </if>
         
 	</select>

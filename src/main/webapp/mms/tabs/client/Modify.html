@@ -1,16 +1,16 @@
 <!-- 顾客信息修改MCM-->
 <div  style="margin: 2% 0px 0px 30%">
-  <div class="easyui-panel" title="顾客编号查询" 
+  <div class="easyui-panel" title="顾客编号查询"
   data-options="iconCls:'icon-user'"
   style="max-width:400px;padding:30px 60px;">
     <div style="margin-bottom:20px">
-        <input id="MCMId" class="easyui-textbox" 
-         labelPosition="top" 
-        data-options="prompt:'请输入顾客编号...'" 
+        <input id="MCMId" class="easyui-textbox"
+         labelPosition="top"
+        data-options="prompt:'请输入顾客编号...'"
         style="width:100%;height:32px">
     </div>
     <div>
-        <a href="javascript:MCMIdclick()" class="easyui-linkbutton" iconCls="icon-ok" 
+        <a href="javascript:MCMIdclick()" class="easyui-linkbutton" iconCls="icon-ok"
           style="width:100%">查询
         </a>
     </div>
@@ -165,7 +165,7 @@ function MCMclickModify(){
         return ;
     }
   $('#MCMform').form({    
-    url:'../Client/ModifyClient',  
+    url:'../Client/ModifyClient',
     onSubmit: function(){    
         // do some check    
         // return false to prevent submit;    
