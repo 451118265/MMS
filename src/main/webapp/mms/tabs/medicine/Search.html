@@ -75,30 +75,18 @@
     // 多条件查询
     function SMMMulclick() {
 
-        $.post("../Medicine/QueryMultiMedicine", {
+
+        $('#MultiSMMdatagrid').datagrid({
+            queryParams: {
                 mname: $('#Mulmname').val(),
                 mmode: $('#Mulmmode').combobox("getValue"),
                 mefficacy: $('#Mulmefficacy').val(),
-                page: $('#MultiSMMdatagrid').datagrid('getPager').data("pagination").options.pageNumber,
-                rows: $('#MultiSMMdatagrid').datagrid('getPager').data("pagination").options.pageSize,
             },
-            $('#MultiSMMdatagrid').datagrid({
-                queryParams: {
-                    mname: $('#Mulmname').val(),
-                    mmode: $('#Mulmmode').combobox("getValue"),
-                    mefficacy: $('#Mulmefficacy').val(),
-                },
-                url: '../Medicine/QueryMultiMedicine'
-
-        })
-            , function (data) {
-
-
+            url: '../Medicine/QueryMultiMedicine'
+        }),
+            function (data) {
                 $('#MultiSMMdatagrid').datagrid('loadData', data);
-
-            }
-        );
-
+            };
     }
 </script>
 

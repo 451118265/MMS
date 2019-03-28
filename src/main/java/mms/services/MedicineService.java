@@ -62,8 +62,9 @@ public class MedicineService {
         // TODO Auto-generated method stub
         Medicine queryMedicineByMno = queryMedicineByMno(medicine.getMno());
         if (queryMedicineByMno != null) {
-            if (queryMedicineByMno.getMid() != medicine.getMid())
+            if (queryMedicineByMno.getMid() != medicine.getMid()) {
                 return "这个药品编号已经存在，不能修改为这个编号";
+            }
         }
         try {
             medicineMapper.modifyMedicine(medicine);

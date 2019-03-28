@@ -63,8 +63,9 @@ public class ClientService {
 		// TODO Auto-generated method stub
 		Client queryClientBycno = queryClientBycno(client.getCno());
 		if (queryClientBycno != null) {
-			if (queryClientBycno.getCid() != client.getCid())
+			if (queryClientBycno.getCid() != client.getCid()) {
 				return "这个客户编号已经存在，不能修改为这个编号";
+			}
 		}
 		clientMapper.modifyClient(client);
 		return "修改成功";

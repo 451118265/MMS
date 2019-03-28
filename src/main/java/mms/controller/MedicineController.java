@@ -29,7 +29,7 @@ public class MedicineController {
     }
 
 
-    // 多条件药品信息保存session
+    // 按条件查询药品信息
 
     @RequestMapping("QueryMultiMedicine")
 

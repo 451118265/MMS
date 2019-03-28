@@ -1,10 +1,10 @@
 package mms.services;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -12,12 +12,18 @@ import mms.mapper.AgencyMapper;
 import mms.pojo.Agency;
 import mms.pojo.EasyUIResult;
 
-/*经办人service
-处理业务逻辑*/
+/**
+ *
+ * @author 廖锋
+ *  经办人service
+ *  处理业务逻辑
+ */
 @Service
-@Transactional
+@Transactional(rollbackFor = Exception.class)
 public class AgencyService {
-	// 注入mapper
+	/**
+	 * 	注入mapper
+	 */
 	@Autowired
 	private AgencyMapper agencyMapper;
 
@@ -65,8 +71,10 @@ public class AgencyService {
 		// TODO Auto-generated method stub
 		Agency queryAgencyByAno = queryAgencyByAno(agency.getAno());
 		if (queryAgencyByAno != null) {
-			if (queryAgencyByAno.getAid() != agency.getAid())
+			if (queryAgencyByAno.getAid() != agency.getAid()) {
 				return "这个经办人编号已经存在，不能修改为这个编号";
+			}
+
 		}
 		try {
 			agencyMapper.modifyAgency(agency);
