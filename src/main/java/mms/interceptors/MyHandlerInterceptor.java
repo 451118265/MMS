@@ -23,7 +23,7 @@ public class MyHandlerInterceptor implements HandlerInterceptor {
 
 	}
 
-	/*
+	/**
 	 * 自定义拦截器 判断session是否存在用户 不存在就拦截返回登陆页面
 	 */
 	@Override
