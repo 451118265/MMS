@@ -25,7 +25,7 @@ public class LoginController {
         return loginService.login(username, password, session);
     }
 
-    // 取出seeion的用户名
+    // 取出session的用户名
     @RequestMapping("GetLoginName")
     @ResponseBody
     public Object getLoginName(HttpSession session) {

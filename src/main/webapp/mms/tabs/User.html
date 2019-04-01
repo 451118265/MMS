@@ -2,7 +2,7 @@
     <table id="dg" title="系统权限管理" class="easyui-datagrid" style="width:88%"
             url="../User/queryAllUser"
             toolbar="#toolbar" pagination="true"
-            rownumbers="true" fitColumns="true" 
+            rownumbers="true" fitColumns="true"
             singleSelect="true"
             data-options="pageSize:5,pageList:[2,5,10]"
             >
@@ -26,14 +26,14 @@
         <form id="fm" method="post" novalidate style="margin:0;padding:20px 50px">
             <div style="margin-bottom:20px;font-size:14px;border-bottom:1px solid #ccc">用户信息</div>
             <div style="margin-bottom:10px">
-                <input name="uUsername" class="easyui-textbox"  id="uUsername" 
-                style="width:100%" 
+                <input name="uUsername" class="easyui-textbox"  id="uUsername"
+                style="width:100%"
                  data-options="prompt:'用户名',required:true,
-                 validType:['length[0,12]'],invalidMessage:'最长12位且不为空'"">
+                 validType:['length[0,12]'],invalidMessage:'最长12位且不为空'">
             </div>
             <div style="margin-bottom:10px">
                 <input name="uPassword" class="easyui-textbox"   id="uPassword"
-                style="width:100%" 
+                style="width:100%"
                 data-options="prompt:'密码',validType:['length[0,12]'],
                 invalidMessage:'最长12位'">
             </div>
@@ -58,7 +58,7 @@
              <option value="数据报表功能">
                 数据报表功能
              </option>
-         </select>   
+         </select>
         </form>
     </div>
     <div id="dlg-buttons">
@@ -89,11 +89,12 @@
                     uPassword:row.uPassword,
                 });
                    $("#uUsername").textbox('disable');
+                   $("#uPassword").textbox('disable');
                 console.log(uAccess);
             }
         }
         function saveUser(){
-            
+
             $.post('../User/GetUUsername', {
             uUsername:$("#uUsername").val()
         }, function(data) {
@@ -107,7 +108,7 @@
             {
                      if($('#uPassword').textbox('isValid')&&($('#uUsername').textbox('isValid')))
                     {
-                               
+
                     $('#fm').form('submit',{
                         url: url,
                         onSubmit: function(event){
@@ -115,16 +116,16 @@
                            $(this).form('validate');
                         },
                         success: function(result){
-                            
+
                                 $('#dlg').dialog('close');        // close the dialog
                                 $('#dg').datagrid('reload');    // reload the user data
-                            
+
                         }
                     });
                 }
-                else $.messager.alert('警告','验证错误');   
+                else $.messager.alert('警告','验证错误');
             }
-            
+
         });
         }
         function destroyUser(){
@@ -137,7 +138,7 @@
                 $.messager.confirm('Confirm','确定删除用户?',function(r){
                     if (r){
                         $.post('../User/DeleteUser',{uUsername:row.uUsername},function(result){
-                        $('#dg').datagrid('reload'); 
+                        $('#dg').datagrid('reload');
                         });
                     }
                 });

@@ -39,20 +39,7 @@ public class MedicineController {
                                            @RequestParam(value = "rows", defaultValue = "5")Integer rows) {
         return medicineService.queryMultiMedicine(medicine, page, rows);
 
-    } // 多条件药品查询url
-
-//    @RequestMapping("GetMultiMedicine")
-//
-//    @ResponseBody
-//    public EasyUIResult getMultiMedicine(@RequestParam(value =
-//            "page", defaultValue = "1") Integer page,
-//
-//                                         @RequestParam(value = "rows", defaultValue = "5") Integer rows,
-//                                         HttpSession session) {
-//        return medicineService.getMultiMedicine(page,
-//                rows, session);
-//
-//    }
+    }
 
 
     // 通过mno删除药品信息

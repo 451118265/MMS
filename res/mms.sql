@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 本地
-Source Server Version : 50719
+Source Server         : localhost_3306
+Source Server Version : 50718
 Source Host           : localhost:3306
 Source Database       : mms
 
 Target Server Type    : MYSQL
-Target Server Version : 50719
+Target Server Version : 50718
 File Encoding         : 65001
 
-Date: 2018-02-15 12:28:12
+Date: 2019-03-29 11:32:41
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,11 +29,12 @@ CREATE TABLE `agency` (
   PRIMARY KEY (`ano`),
   UNIQUE KEY `ano_UNIQUE` (`ano`),
   UNIQUE KEY `aid_UNIQUE` (`aid`)
-) ENGINE=InnoDB AUTO_INCREMENT=12036 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12037 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of agency
 -- ----------------------------
+INSERT INTO `agency` VALUES ('1', 'test', '男', '152000', 'ss', '12036');
 INSERT INTO `agency` VALUES ('1000055', '王平', '男', '13587477044', '苍南县金乡镇健民药店有限公司', '9369');
 INSERT INTO `agency` VALUES ('1001239', '薛小苹', '女', '18585262376', '苍南县桥墩镇百信药店有限公司', '10846');
 INSERT INTO `agency` VALUES ('10018252', '黄纪元', '男', '13344497620', '温州一洲医药连锁有限公司同济店', '6452');
@@ -42,8 +43,7 @@ INSERT INTO `agency` VALUES ('10068782', '林瑞道', '男', '15614675932', '瑞
 INSERT INTO `agency` VALUES ('10074222', '胡贝贝', '女', '13304043258', '杭州萧山同春堂医药零售有限责任公司', '7670');
 INSERT INTO `agency` VALUES ('10077034', '江云琴', '女', '15541169138', '温岭市泽国广源药店', '12014');
 INSERT INTO `agency` VALUES ('10078994', '黄炜明', '男', '13567438211', '浙江普泽医药有限公司', '10687');
-INSERT INTO `agency` VALUES ('10085773', '陈敏芳', '女', '18615291784', '遂昌慈福堂便民药店有限公司', '6391');
-INSERT INTO `agency` VALUES ('100860', '俞佳俊', '男', '13269463082', '华东医药股份有限公司', '8234');
+INSERT INTO `agency` VALUES ('10086', '俞佳俊', '男', '13269463082', '华东医药股份有限公司', '8234');
 INSERT INTO `agency` VALUES ('10103466', '王加乐', '男', '13454049693', '绍兴市上虞区梁湖镇康宁大药房', '664');
 INSERT INTO `agency` VALUES ('10106824', '童亚飞', '女', '13216143974', '兰溪市云龙大药房连锁有限公司德济堂连锁店', '11994');
 INSERT INTO `agency` VALUES ('10120648', '吴泼', '男', '15816279705', '台州市老百姓好心情医药连锁有限公司开发区界牌店', '431');
@@ -12094,13 +12094,17 @@ CREATE TABLE `client` (
   KEY `ano` (`ano`),
   CONSTRAINT `client_ibfk_1` FOREIGN KEY (`mno`) REFERENCES `medicine` (`mno`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `client_ibfk_2` FOREIGN KEY (`ano`) REFERENCES `agency` (`ano`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of client
 -- ----------------------------
+INSERT INTO `client` VALUES ('1', '小小', '男', '1', '深圳 ', '15200000000', '五', '1234496521', '12348226', '2019-03-16 00:00:00', '110', '2');
+INSERT INTO `client` VALUES ('2', '小小', '男', '1', '深圳 ', '15200000000', '五', '1234496521', '12348226', '2019-03-18 00:00:00', '110', '3');
+INSERT INTO `client` VALUES ('3', '小小', '男', '1', '深圳 ', '15200000000', '五', '1234496521', '12348226', '2019-03-18 00:00:00', '110', '4');
+INSERT INTO `client` VALUES ('4', '小小', '男', '1', '深圳 ', '15200000000', '五', '1234496521', '12348226', '2019-03-18 00:00:00', '110', '5');
 INSERT INTO `client` VALUES ('4396', '小明', '男', '16', '广东省汕头市濠江区广奥街道', '15875495004', '病名为爱', '1001044516', '10074222', '2017-12-12 00:00:00', '需要治疗', '1');
-INSERT INTO `client` VALUES ('957334', '翠莲', '女', '21', '湖南省湘江', '13612338564', '眼睛痛', '1000562256', '1000055', '2017-12-28 00:00:00', '需要治疗', '2');
+INSERT INTO `client` VALUES ('5', '小小', '男', '1', '深圳 ', '15200000000', '五', '1234496521', '12348226', '2019-03-18 00:00:00', '110', '6');
 
 -- ----------------------------
 -- Table structure for medicine
@@ -12115,11 +12119,12 @@ CREATE TABLE `medicine` (
   PRIMARY KEY (`mno`),
   UNIQUE KEY `mno_UNIQUE` (`mno`),
   UNIQUE KEY `mid_UNIQUE` (`mid`)
-) ENGINE=InnoDB AUTO_INCREMENT=4816 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4823 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of medicine
 -- ----------------------------
+INSERT INTO `medicine` VALUES ('1', 'test', '外用', 'test2', '4816');
 INSERT INTO `medicine` VALUES ('1000007667', '同仁堂(清心明目上清丸)', '内服', '清热散风，明目止痛。用于上焦火盛引起的：暴发火眼，红肿痛痒，热泪昏花，云翳遮睛，头痛目眩，烦燥口渴，大便燥结。', '50');
 INSERT INTO `medicine` VALUES ('1000562256', '盐酸哌仑西平片', '内服', '临床主要用于各种酸相关性疾患，如：十二指肠溃疡、胃溃疡、胃-食管反流症、高酸性胃炎、应激性溃疡、急性胃粘膜出血、胃泌素瘤等。', '2800');
 INSERT INTO `medicine` VALUES ('1000664460', '加味白药丸', '内服', '健胃消食。用于消化不良，胃腹胀痛，肠鸣，食欲不振。', '2731');
@@ -12442,6 +12447,7 @@ INSERT INTO `medicine` VALUES ('1118773077', '苦参片', '内服', '疏肝健�
 INSERT INTO `medicine` VALUES ('1118788116', '澳特斯(复方福尔可定口服溶液)', '内服', '伤风、流感、咽喉及支气管刺激所引起的咳嗽、痰多咳嗽、干咳、敏感性咳、流涕、鼻塞和咽喉痛', '464');
 INSERT INTO `medicine` VALUES ('1119766802', '清开灵片', '内服', '本品用于局部软组织炎症或损失：主要包括肩周炎、腱鞘炎、腰肌劳损等，急慢性关节炎及所引起的疼痛的辅助治疗。', '736');
 INSERT INTO `medicine` VALUES ('1119855621', '﻿双黄连口服液', '内服', '疏风解表，清热解毒。用于外感风热所致的感冒，症见发热、咳嗽、咽痛。', '1');
+INSERT INTO `medicine` VALUES ('112', 'test', '外用', 'test', '4822');
 INSERT INTO `medicine` VALUES ('1120312864', '健儿素颗粒', '内服', '柔肝和胃，散瘀，缓急止痛。用于肝胃不和、瘀血阻络所致的胃脘疼痛、连及两胁、嗳气、泛酸；慢性胃炎见上述证候者。', '4595');
 INSERT INTO `medicine` VALUES ('1120349788', '复方五指柑片', '内服', '柔肝和胃，散瘀，缓急止痛。用于肝胃不和、瘀血阻络所致的胃脘疼痛、连及两胁、嗳气、泛酸；慢性胃炎见上述证候者。', '4479');
 INSERT INTO `medicine` VALUES ('112088577', '维C银翘片', '内服', '抑制血小板聚成，防止血栓形成，治疗和预防短暂脑缺血发作、脑血栓、冠心病、心肌梗塞、偏头疼、人工心脏瓣膜，动静脉漏和其他手术后的血栓形成，血栓闭塞性脉管...', '2488');
@@ -14634,6 +14640,7 @@ INSERT INTO `medicine` VALUES ('1997575521', '达菲(磷酸奥司他韦胶囊)',
 INSERT INTO `medicine` VALUES ('1997996968', '万应甘和茶', '内服', '芳香解表，燥湿和中，升清降浊。用于感冒发热，腹痛吐泻，暑湿泄泻。', '245');
 INSERT INTO `medicine` VALUES ('1998845157', '比沙可啶肠溶片', '内服', '用于便秘的治疗，也可用于腹部X线检查或内窥镜检查前清洁肠道，以及手术前后清洁肠道用。', '2659');
 INSERT INTO `medicine` VALUES ('1999506119', '藿香正气丸', '内服', '清热解毒，疏风解表。用于上呼吸道感染、急性扁桃体炎、咽喉炎属外感风热、热毒壅盛证，症见发热、咽喉肿痛', '1846');
+INSERT INTO `medicine` VALUES ('2', 'test', '内服', 'test', '4817');
 INSERT INTO `medicine` VALUES ('2000695584', '复方消化酶胶囊', '内服', '临床仅用作消毒防腐药，用于皮肤及粘膜的感染，如化脓性中耳炎、化脓性皮炎、急慢性鼻炎、烧伤、溃疡等。对组织几乎无刺激，脓、血对其消毒作用无明显影响。', '3101');
 INSERT INTO `medicine` VALUES ('2001624665', '日理达(氨麻美敏胶囊(Ⅱ))', '内服', '解热镇痛镇咳药。本品适用于治疗和减轻感冒引起的发热，头痛，周身四肢酸痛，喷嚏，流涕，鼻塞，咳嗽等症状。', '430');
 INSERT INTO `medicine` VALUES ('2001735698', '阿司匹林肠溶片', '内服', '解热镇痛类药，用于发热、头痛、关节痛等。', '2324');
@@ -15226,6 +15233,7 @@ INSERT INTO `medicine` VALUES ('297826562', '儿童回春丸', '内服', '主要
 INSERT INTO `medicine` VALUES ('298161365', '紫地宁血散', '内服', '解毒辟秽，理气止泻。用于泄泻和痧气（中暑）。', '4001');
 INSERT INTO `medicine` VALUES ('298245690', '槐角地榆丸', '内服', '疏风凉血，泻热润燥。用于脏腑实热、大肠火盛所致痔疮、湿热便秘、肛门肿痛。', '2852');
 INSERT INTO `medicine` VALUES ('299164997', '布洛芬干混悬剂', '内服', '用于缓解轻至中度疼痛如头痛、关节痛、偏头痛、牙痛、肌肉痛、神经痛、痛经。也用于普通感冒或流行性感冒引起的发热。', '651');
+INSERT INTO `medicine` VALUES ('3', 'test', '内服', 'test', '4818');
 INSERT INTO `medicine` VALUES ('300052400', '复方大青叶合剂', '内服', '疏风清热，解毒消肿，凉血利胆。用于感冒发热头痛，咽喉红肿，耳下肿痛，肋痛黄疸等症，及流感、腮腺炎、急性病毒性肝炎见有上述症状者。', '497');
 INSERT INTO `medicine` VALUES ('30139331', '酚氨咖敏片', '内服', '解表散热，疏肝和胃。用于寒热往来，胸胁苦满，心烦喜吐，口苦咽干。', '1661');
 INSERT INTO `medicine` VALUES ('301474195', '阿司匹林片', '内服', '活血散瘀，消肿止痛。用于跌打损伤，瘀血肿痛。', '1038');
@@ -15478,6 +15486,7 @@ INSERT INTO `medicine` VALUES ('398916315', '阿咖酚散', '内服', '用于感
 INSERT INTO `medicine` VALUES ('39907110', '双氯芬酸钠肠溶片', '内服', '用于：', '680');
 INSERT INTO `medicine` VALUES ('39915129', '救必应胃痛片', '内服', '行气活血，和胃止痛。用于肝胃气滞，湿热瘀阻所致的急慢性胃肠炎，胃及十二指肠溃疡，慢性结肠炎。', '4789');
 INSERT INTO `medicine` VALUES ('399467129', '感冒清胶囊', '内服', '用于头晕头痛，腰酸背痛，风火牙痛，风湿骨痛，蚊虫叮咬。', '1744');
+INSERT INTO `medicine` VALUES ('4', 'test', '内服', 'test', '4819');
 INSERT INTO `medicine` VALUES ('400411252', '氨咖黄敏胶囊', '内服', '用于缓解普通感冒及流行性感冒引起的发热、头痛、鼻塞、咽痛等症状.', '601');
 INSERT INTO `medicine` VALUES ('400685994', '胃康灵胶囊', '内服', '本品适用于治疗已明确诊断的十二指肠溃疡，胃溃疡；十二指肠溃疡短期治疗后复发的患者；持久性胃食道返流性疾病，对抗返流措施和单一药物治疗如抗酸剂无效的患者...', '4417');
 INSERT INTO `medicine` VALUES ('401023938', '小儿百寿丸', '内服', '清热解毒，镇静安神。用于外感风热所致发热，烦躁不安，咽喉肿痛；上呼吸道感染，病毒性感冒，急性咽炎等病症属上述证候者。', '741');
@@ -15700,6 +15709,7 @@ INSERT INTO `medicine` VALUES ('498372530', '润肠丸', '内服', '补中益气
 INSERT INTO `medicine` VALUES ('498417046', '常乐康(酪酸梭菌二联活菌散)', '内服', '本品适用于敏感细菌所引起的下列中、重度感染：1.呼吸系统感染：急性支气管炎、慢性支气管炎急性发作、弥漫性细支气管炎、支气管扩张合并感染、肺炎、扁桃体炎（...', '3315');
 INSERT INTO `medicine` VALUES ('499024633', '复方西羚解毒丸', '内服', '本品为戊二醛消毒杀菌剂。能够迅速杀灭各种病毒、细菌、霉菌等病原微生物，对口蹄溃烂病毒、猪瘟病毒、大肠杆菌、新城疫等病原具有迅速杀灭作用，对禽流行性感冒...', '1196');
 INSERT INTO `medicine` VALUES ('499262580', '金梅清暑颗粒', '内服', '清暑解毒，生津止渴。用于夏季暑热，口渴多汗，头昏心烦，小便短赤，并防治痧痱，暑症。', '202');
+INSERT INTO `medicine` VALUES ('5', 'test', '内服', 'test', '4820');
 INSERT INTO `medicine` VALUES ('501158593', '感冒止咳颗粒', '内服', '疏风清热，宣肺止咳。用于风热感冒初起，头痛，咳嗽，口干，咽痛。', '1789');
 INSERT INTO `medicine` VALUES ('501596056', '阿司匹林肠溶片', '内服', '用于流感病毒及疱疹病毒感染.', '2054');
 INSERT INTO `medicine` VALUES ('501865353', '清淋片', '内服', '辛凉解表，清热解毒。用于流行性感冒引起的发热头痛、咳嗽、口干、咽喉疼痛。', '1532');
@@ -15937,6 +15947,7 @@ INSERT INTO `medicine` VALUES ('598538593', '藿香正气水', '内服', '用于
 INSERT INTO `medicine` VALUES ('598592980', '武力拔寒散', '内服', '清热解毒，散瘀消肿。用于急慢性阑尾炎。', '4469');
 INSERT INTO `medicine` VALUES ('599219271', '必亮(萘替芬酮康唑乳膏)', '内服', '本品适用于治疗真菌性皮肤病，如手足癣，体股癣，头癣，皮肤念珠菌病等。', '398');
 INSERT INTO `medicine` VALUES ('599316252', '胃康灵', '内服', '本品适用于敏感细菌所引起的下列轻、中度感染；', '4102');
+INSERT INTO `medicine` VALUES ('6', 'test', '内服', 'test', '4821');
 INSERT INTO `medicine` VALUES ('600571845', '对乙酰氨基酚片', '内服', '解热镇痛类药，用于发热、头痛、关节痛等。', '2113');
 INSERT INTO `medicine` VALUES ('600983827', '复方雷尼替丁胶囊', '内服', '电解质补充药。用于：1.治疗各种原因引起的低钾血症。如进食不足、呕吐、严重腹泻、应用排钾性利尿、低钾性家族周期性麻痹、长期应用糖皮质激素和补充高渗葡萄糖...', '3610');
 INSERT INTO `medicine` VALUES ('601242040', '远达(宁神灵颗粒)', '内服', '舒肝开郁，镇惊安神。用于头昏头痛，心烦易怒，心悸不宁，胸闷少气，少寐多梦。', '106');
@@ -16951,6 +16962,7 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('admir', '1234', '信息查询功能,信息录入功能,信息删除功能,信息修改功能,信息浏览功能,数据报表功能,用户管理功能');
+INSERT INTO `user` VALUES ('admin', '1234', '信息查询功能,信息录入功能,信息删除功能,信息修改功能,信息浏览功能,数据报表功能，用户管理功能');
 INSERT INTO `user` VALUES ('Adobe', '123', '信息查询功能,信息录入功能,信息删除功能,信息修改功能,信息浏览功能,数据报表功能');
-INSERT INTO `user` VALUES ('test', '1201', '信息查询功能');
+INSERT INTO `user` VALUES ('test', '1200', '信息查询功能');
+INSERT INTO `user` VALUES ('test1', '110', '信息查询功能,信息录入功能,信息修改功能,信息浏览功能,数据报表功能');
