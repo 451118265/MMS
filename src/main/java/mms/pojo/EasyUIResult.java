@@ -1,7 +1,10 @@
 package mms.pojo;
 
+import lombok.Data;
+
 import java.util.List;
 
+@Data
 public class EasyUIResult {
 	// easyui返回json格式进行分页
 	private Integer total;
@@ -20,25 +23,5 @@ public class EasyUIResult {
 		this.rows = rows;
 	}
 
-	public Integer getTotal() {
-		return total;
-	}
-
-	public void setTotal(Integer total) {
-		this.total = total;
-	}
-
-	public List<?> getRows() {
-		return rows;
-	}
-
-	public void setRows(List<?> rows) {
-		this.rows = rows;
-	}
-
-	@Override
-	public String toString() {
-		return "EasyUIResult [total=" + total + ", rows=" + rows + "]";
-	}
 	
 }

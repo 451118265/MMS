@@ -21,7 +21,7 @@
     </div>
     <div id="dlg" class="easyui-dialog" style="width:400px"
             closed="true" buttons="#dlg-buttons"
-            data-options="iconCls:'icon-save',modal:true,draggable:false"
+            data-options="iconCls:'icon-save',modal:true"
             >
         <form id="fm" method="post" novalidate style="margin:0;padding:20px 50px">
             <div style="margin-bottom:20px;font-size:14px;border-bottom:1px solid #ccc">用户信息</div>
@@ -77,7 +77,7 @@
         function editUser(){
             i=2;
             var row = $('#dg').datagrid('getSelected');
-            if(row.uUsername=="admir"){
+            if(row.uUsername=="admin"){
                 $.messager.alert('警告','超级管理员不可编辑');
                 return ;
             }
@@ -89,7 +89,6 @@
                     uPassword:row.uPassword,
                 });
                    $("#uUsername").textbox('disable');
-                   $("#uPassword").textbox('disable');
                 console.log(uAccess);
             }
         }
@@ -130,7 +129,7 @@
         }
         function destroyUser(){
             var row = $('#dg').datagrid('getSelected');
-            if(row.uUsername=="admir"){
+            if(row.uUsername=="admin"){
                 $.messager.alert('警告','超级管理员不可删除');
                 return ;
             }

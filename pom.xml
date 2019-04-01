@@ -25,6 +25,12 @@
 	</properties>
 
     <dependencies>
+        <!-- Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.10</version>
+        </dependency>
         <!-- 单元测试 -->
         <dependency>
 				<groupId>org.springframework</groupId>
@@ -46,7 +52,7 @@
             <artifactId>spring-aspects</artifactId>
             <version>${spring.version}</version>
         </dependency>
-        <!-- druid -->
+        <!-- druid连接池 -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
@@ -94,12 +100,8 @@
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
         </dependency>
-        <!-- 连接池 -->
-        <dependency>
-            <groupId>com.jolbox</groupId>
-            <artifactId>bonecp-spring</artifactId>
-            <version>0.8.0.RELEASE</version>
-        </dependency>
+
+
         
         <dependency>
 				<groupId>org.apache.httpcomponents</groupId>
