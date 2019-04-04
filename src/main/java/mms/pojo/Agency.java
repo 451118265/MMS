@@ -1,8 +1,9 @@
 package mms.pojo;
 
-import lombok.Data;
-
-@Data
+import lombok.Getter;
+import lombok.Setter;
+@Getter
+@Setter
 public class Agency {
 	// 编号ano：char(8)
 	// 姓名aname：char(8)

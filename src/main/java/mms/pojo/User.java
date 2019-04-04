@@ -11,5 +11,28 @@ public class User {
 	private String uPassword;
 	private String uAccess;
 
+	public String getuUsername() {
+		return uUsername;
+	}
+
+	public void setuUsername(String uUsername) {
+		this.uUsername = uUsername;
+	}
+
+	public String getuPassword() {
+		return uPassword;
+	}
+
+	public void setuPassword(String uPassword) {
+		this.uPassword = uPassword;
+	}
+
+	public String getuAccess() {
+		return uAccess;
+	}
+
+	public void setuAccess(String uAccess) {
+		this.uAccess = uAccess;
+	}
 
 }

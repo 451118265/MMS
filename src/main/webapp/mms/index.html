@@ -4,7 +4,7 @@
 <meta name="renderer" content="webkit">
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
 <title>医院管理信息系统</title>
 <link rel="Shortcut Icon" href="./images/favicon.ico" />
 <link rel="stylesheet" type="text/css" href="./js/jquery-easyui-1.4/themes/default/easyui.css" />
@@ -148,7 +148,8 @@
 
         var i=1; //用于管理用户的编辑新增判断
          $.ajax({
-        url: '../Login/GetLoginName',            
+        url: '../Login/GetLoginName',
+
         success: function (data) {
             $("#loginName").html(data.uUsername);
             access = data.uAccess;

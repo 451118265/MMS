@@ -1,8 +1,10 @@
 package mms.pojo;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class Medicine {
 	// 编号mno：char(12)
 	// 名称mname：nvarchar(50)
