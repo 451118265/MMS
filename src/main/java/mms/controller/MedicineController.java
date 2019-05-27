@@ -35,8 +35,8 @@ public class MedicineController {
 
     @ResponseBody
     public EasyUIResult queryMultiMedicine(Medicine medicine,
-                                           @RequestParam(value = "page", defaultValue = "1")Integer page,
-                                           @RequestParam(value = "rows", defaultValue = "5")Integer rows) {
+                                           @RequestParam(value = "page", defaultValue = "1") Integer page,
+                                           @RequestParam(value = "rows", defaultValue = "5") Integer rows) {
         return medicineService.queryMultiMedicine(medicine, page, rows);
 
     }

@@ -104,17 +104,8 @@ public class MedicineService {
         PageInfo<Medicine> pageInfo = new PageInfo<Medicine>(medicines);
         return new EasyUIResult(pageInfo.getTotal(), medicines);
 
-        // System.out.println(medicine);
-        // List<Medicine> medicine1 = (List<Medicine>)
-        // medicineMapper.queryMultiMedicine(medicine);
-        // System.out.println(medicine1);
+
     }
 
-//    public EasyUIResult getMultiMedicine(Integer page, Integer rows, HttpSession session) {
-//        PageHelper.startPage(page, rows);
-//        List<Medicine> medicines = (List<Medicine>) session.getAttribute("medicines");
-//        System.out.println(medicines);
-//        PageInfo<Medicine> pageInfo = new PageInfo<Medicine>(medicines);
-//        return new EasyUIResult(pageInfo.getTotal(), medicines);
-//    }
+
 }

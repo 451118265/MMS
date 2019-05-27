@@ -18,49 +18,50 @@ import mms.services.UserServies;
 @RequestMapping("User")
 @Controller
 public class UserController {
-	@Autowired
-	private UserServies userServies;
+    @Autowired
+    private UserServies userServies;
 
-	// 添加新用户
-	@RequestMapping("AddUser")
-	@ResponseBody
-	public String addUser(User user) {
-		userServies.addUser(user);
-		return "success";
-	}
+    // 添加新用户
+    @RequestMapping("AddUser")
+    @ResponseBody
+    public String addUser(User user) {
+        userServies.addUser(user);
+        return "success";
+    }
 
-	// 修改用户信息
-	@RequestMapping("UpdateUser")
-	@ResponseBody
-	public void updateUser(User user) {
-		userServies.updateUser(user);
-	}
+    // 修改用户信息
+    @RequestMapping("UpdateUser")
+    @ResponseBody
+    public void updateUser(User user) {
+        userServies.updateUser(user);
+    }
 
-	// 删除用户
-	@RequestMapping("DeleteUser")
-	@ResponseStatus(value = HttpStatus.OK)
-	public void deleteUser(String uUsername) {
-		userServies.deleteUser(uUsername);
-	}
+    // 删除用户
+    @RequestMapping("DeleteUser")
+    @ResponseStatus(value = HttpStatus.OK)
+    public void deleteUser(String uUsername) {
+        userServies.deleteUser(uUsername);
+    }
 
-	// easyui返回全部用户信息
-	@RequestMapping("queryAllUser")
-	@ResponseBody
-	public EasyUIResult queryAllUser(@RequestParam(value = "page", defaultValue = "1") Integer page,
-			@RequestParam(value = "rows", defaultValue = "5") Integer rows) {
-		EasyUIResult queryAllUser = userServies.queryAllUser(page, rows);
-		return queryAllUser;
-	}
+    // easyui返回全部用户信息
+    @RequestMapping("queryAllUser")
+    @ResponseBody
+    public EasyUIResult queryAllUser(@RequestParam(value = "page", defaultValue = "1") Integer page,
+                                     @RequestParam(value = "rows", defaultValue = "5") Integer rows) {
+        EasyUIResult queryAllUser = userServies.queryAllUser(page, rows);
+        return queryAllUser;
+    }
 
-	// 通过uUsername查询用户
-	@RequestMapping(value = "GetUUsername", produces = "text/html;charset=UTF-8")
-	@ResponseBody
-	public String queryUserByName(String uUsername) {
-		return userServies.queryUserByName(uUsername);
-	}
-	@RequestMapping(value = "GetUpassword", produces = "text/html;charset=UTF-8")
-	@ResponseBody
-	public String queryPasswordByName(String uUsername) {
-		return userServies.queryPasswordByName(uUsername);
-	}
+    // 通过uUsername查询用户
+    @RequestMapping(value = "GetUUsername", produces = "text/html;charset=UTF-8")
+    @ResponseBody
+    public String queryUserByName(String uUsername) {
+        return userServies.queryUserByName(uUsername);
+    }
+
+    @RequestMapping(value = "GetUpassword", produces = "text/html;charset=UTF-8")
+    @ResponseBody
+    public String queryPasswordByName(String uUsername) {
+        return userServies.queryPasswordByName(uUsername);
+    }
 }

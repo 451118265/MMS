@@ -5,13 +5,13 @@ import java.util.List;
 import mms.pojo.Client;
 
 public interface ClientMapper {
-	public Client queryClientBycno(String cno);
+    public Client queryClientBycno(String cno);
 
-	public void saveClient(Client client);
+    public void saveClient(Client client);
 
-	public List<Client> queryAllClient();
+    public List<Client> queryAllClient();
 
-	public void deleteClientBycno(String cno);
+    public void deleteClientBycno(String cno);
 
-	public void modifyClient(Client client);
+    public void modifyClient(Client client);
 }
